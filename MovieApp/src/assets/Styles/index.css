@@ -19,3 +19,6 @@ body {
   line-height: 1.75;
   font-size: 22px;
 }
+.hero{
+  background-image: url(../Images/background.jpg);
+}

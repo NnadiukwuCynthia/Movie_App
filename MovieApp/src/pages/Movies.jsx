@@ -3,7 +3,7 @@ import MovieCertifications from "../Components/Movies"
 
 const Movies = () => {
   return (
-    <div>Movies
+    <div>
       <MovieCertifications/>
     </div>
   )

@@ -1,6 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Image from '../assets/Images/background.jpg'
 
 function MovieCertifications() {
+  const [movieData, setMovieData] = useState(null);
+
   useEffect(() => {
     const fetchMovieCertifications = async () => {
           const options = {
@@ -17,6 +20,7 @@ function MovieCertifications() {
           throw new Error('Failed to fetch movie certifications');
         }
         const data = await response.json();
+        setMovieData(data);
         console.log(data);
       } catch (error) {
         console.error(error);
@@ -27,8 +31,14 @@ function MovieCertifications() {
   }, []); 
 
   return (
-    <div>
-      {}
+    <div className='flex'>
+      {movieData && movieData.results.map(movie => (
+        <div key={movie.id} className='w-36 h-44'>
+          <img src={Image} alt="" className='w-full'/>
+          <p>{movie.title}</p>
+        </div>  
+      )
+        )}
     </div>
   );
 }

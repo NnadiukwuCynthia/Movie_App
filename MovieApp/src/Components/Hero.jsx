@@ -1,9 +1,12 @@
-import Image from '../assets/Images/background.jpeg'
 
 const Hero = () => {
   return (
-    <div className="w-full h-96"> 
-    <img src={Image} alt="" className='w-full h-full'/>
+    <div className="w-full h-96 hero bg-cover bg-center relative"> 
+    <div className="w-full h-full flex flex-col justify-center pl-10 bg-charcoal-black bg-cover bg-center absolute">
+      <p className="text-6xl">Welcome.</p>
+      <p className="font-bold text-2xl">Millions of movies, TV shows to discover. Explore now!!!.</p>
+      <input type="text" className="w-5/6 h-14 px-10 mt-5 rounded-full text-base outline-none" placeholder="Search For Movie or TV Shows..." />
+    </div>
     </div>
   )
 }
