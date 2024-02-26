@@ -3,8 +3,7 @@ import { useEffect } from 'react';
 function MovieCertifications() {
   useEffect(() => {
     const fetchMovieCertifications = async () => {
-      // const apiKey = '3e920eb094472a3aefd5cfb2ebf327bf';
-      const options = {
+          const options = {
         method: 'GET',
         headers: {
           accept: 'application/json',
