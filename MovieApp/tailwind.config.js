@@ -13,12 +13,11 @@ export default {
         'work-sans': ['"Work Sans"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        'emerald-green': '#50c878',
         'gold': '#FFD700',
         'brown': '#421e15',
         'dark-purple': '#20081c',
-        'text-grey': '#747474',
-        'charcoal-black': '#0000006b',
+        'Bgc': '#041844fa',
+        'charcoal-black': '#04184498',
       },
       height:{
         'height': '120vh'

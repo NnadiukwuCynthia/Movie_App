@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function MovieCertifications() {
+  const [movieData, setMovieData] = useState(null);
+
   useEffect(() => {
     const fetchMovieCertifications = async () => {
           const options = {
@@ -17,6 +19,7 @@ function MovieCertifications() {
           throw new Error('Failed to fetch movie certifications');
         }
         const data = await response.json();
+        setMovieData(data);
         console.log(data);
       } catch (error) {
         console.error(error);
@@ -27,8 +30,16 @@ function MovieCertifications() {
   }, []); 
 
   return (
-    <div>
-      {}
+    <div className=' overflow-x-auto m-0 p-0'>
+      <div className=' flex'>
+        {movieData && movieData.results.map(movie => (
+          <button key={movie.id} className=''>
+            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className=''/>
+            <p>{movie.title}</p>
+          </button>  
+        )
+        )}
+      </div>
     </div>
   );
 }
