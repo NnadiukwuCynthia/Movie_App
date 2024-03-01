@@ -31,3 +31,8 @@ body {
 .movies{
   background-image: url(../Images/movies-bg.jpg);
 }
+.trending{
+  background-image: url(../Images/trending-bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
