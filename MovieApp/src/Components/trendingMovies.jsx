@@ -1,7 +1,8 @@
+
 import { useEffect, useState } from 'react';
 import MovieDetails from './MovieDetails';
 
-function MovieCertifications() {
+function TrendingMovies() {
   const [movieData, setMovieData] = useState(null);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
@@ -16,12 +17,13 @@ function MovieCertifications() {
       };
 
       try {
-        const response = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=3e920eb094472a3aefd5cfb2ebf327bf', options);
+        const response = await fetch('https://api.themoviedb.org/3/trending/all/day?api_key=3e920eb094472a3aefd5cfb2ebf327bf', options);
         if (!response.ok) {
           throw new Error('Failed to fetch movie certifications');
         }
         const data = await response.json();
         setMovieData(data);
+        console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -34,6 +36,7 @@ function MovieCertifications() {
     setSelectedMovie(movie);
   }
 
+ 
   return (
     <div className=' overflow-x-auto overflow-y-hidden h-image-height'>
       <div className='flex'>
@@ -51,4 +54,4 @@ function MovieCertifications() {
   );
 }
 
-export default MovieCertifications;
+export default TrendingMovies;
