@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Image from '../assets/Images/background.jpg'
 
 function MovieCertifications() {
   const [movieData, setMovieData] = useState(null);
@@ -31,14 +30,16 @@ function MovieCertifications() {
   }, []); 
 
   return (
-    <div className='flex'>
-      {movieData && movieData.results.map(movie => (
-        <div key={movie.id} className='w-36 h-44'>
-          <img src={Image} alt="" className='w-full'/>
-          <p>{movie.title}</p>
-        </div>  
-      )
+    <div className=' overflow-x-auto m-0 p-0'>
+      <div className=' flex'>
+        {movieData && movieData.results.map(movie => (
+          <button key={movie.id} className=''>
+            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className=''/>
+            <p>{movie.title}</p>
+          </button>  
+        )
         )}
+      </div>
     </div>
   );
 }
