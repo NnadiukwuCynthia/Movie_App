@@ -18,9 +18,12 @@ export default {
         'dark-purple': '#20081c',
         'Bgc': '#041844fa',
         'charcoal-black': '#04184498',
+        'hex-background': '#b0bbc52c',
+        'light': '#ffffff'
       },
       height:{
-        'height': '120vh'
+        'height': '120vh',
+        'image-height': '350px',
       }
     },
   },

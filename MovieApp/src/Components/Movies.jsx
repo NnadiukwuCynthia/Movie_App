@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import MovieDetails from './MovieDetails';
 
 function MovieCertifications() {
   const [movieData, setMovieData] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     const fetchMovieCertifications = async () => {
@@ -29,16 +31,22 @@ function MovieCertifications() {
     fetchMovieCertifications();
   }, []); 
 
+  const handleClick = (movie) => {
+    setSelectedMovie(movie);
+  }
+
   return (
-    <div className=' overflow-x-auto m-0 p-0'>
-      <div className=' flex'>
+    <div className=' overflow-x-auto overflow-y-hidden h-image-height'>
+      <div className='flex'>
         {movieData && movieData.results.map(movie => (
-          <button key={movie.id} className=''>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className=''/>
-            <p>{movie.title}</p>
-          </button>  
+          <button key={movie.id} onClick={() => handleClick(movie)} className='h-72 mx-4'>
+            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className='images rounded-lg'/>
+            <p className='text-base text-dark-purple font-semibold'>{movie.title}</p>
+            <p className='text-sm text-charcoal-black font-light'>{movie.release_date}</p>
+          </button>
         )
         )}
+        {selectedMovie && <MovieDetails movie={selectedMovie}/> }
       </div>
     </div>
   );
