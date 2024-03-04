@@ -18,6 +18,7 @@ body {
   font-family: "Work Sans", sans-serif;
   line-height: 1.75;
   font-size: 22px;
+  scroll-behavior: smooth;
 }
 .hero{
   background-image: url(../Images/background.jpg);
